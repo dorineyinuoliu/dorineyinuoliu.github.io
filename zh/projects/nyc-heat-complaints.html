@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-Hans" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>纽约冬天谁在挨冻？ · 刘一诺（Dorine）</title>
+  <meta name="description" content="2025–26 年冬天的暖气投诉：大家什么时候投诉、天气能解释多少、投诉集中在哪里，又是哪些楼一次次出现。">
+  <meta property="og:title" content="纽约冬天谁在挨冻？ · 刘一诺（Dorine）">
+  <meta property="og:description" content="2025–26 年冬天的暖气投诉：大家什么时候投诉、天气能解释多少、投诉集中在哪里，又是哪些楼一次次出现。">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="alternate" hreflang="en" href="https://dorineyinuoliu.github.io/projects/nyc-heat-complaints.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://dorineyinuoliu.github.io/zh/projects/nyc-heat-complaints.html">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../zh/index.html">刘一诺（Dorine）</a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="../../zh/index.html#work" aria-current="page">作品</a>
+      <a href="../../zh/about.html">关于</a>
+      <a href="../../files/Yinuo-Liu-Resume.pdf">简历</a>
+      <a href="#contact">联系</a>
+      <a class="lang-switch" href="../../projects/nyc-heat-complaints.html" hreflang="en" lang="en">EN</a>
+      <button class="theme-toggle" type="button" aria-label="切换到浅色模式">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+  <p class="crumb"><a href="../index.html#work">&larr; 全部作品</a></p>
+  <header class="project-head">
+    <p class="row-meta">个人项目 &middot; SI 649 信息可视化 &middot; 2026 年 10 月</p>
+    <h1>纽约冬天谁在挨冻？</h1>
+    <p class="lede">2025–26 年冬天的暖气投诉：大家什么时候投诉、天气能解释多少、投诉集中在哪里，又是哪些楼一次次出现。</p>
+  </header>
+</div>
+
+<div class="wrap">
+<figure class="fig hero-fig paper">
+  <a class="zoom" href="../../assets/img/nyc-heat/overview.webp"><img src="../../assets/img/nyc-heat/overview.webp" alt="纽约暖气投诉项目的四张最终图表" width="1740" height="1364" loading="lazy"></a>
+  <figcaption>最终的四张图：什么时候、为什么、在哪里、哪些楼。</figcaption>
+</figure>
+</div>
+
+<div class="wrap">
+  <div class="project-body">
+    <dl class="facts-list">
+    <div><dt>类型</dt><dd>个人课程项目</dd></div>
+    <div><dt>课程</dt><dd>SI 649 信息可视化，密歇根大学</dd></div>
+    <div><dt>时间</dt><dd>2026 年 10 月</dd></div>
+    <div><dt>我的角色</dt><dd>全部由我完成：提问题、找数据、清洗、画图和写报告</dd></div>
+    <div><dt>数据</dt><dd>纽约 311 服务请求；NOAA 每日气温（中央公园站）；ACS 2020–2024 租房与收入数据；纽约邮编区边界</dd></div>
+    <div><dt>工具</dt><dd>Python（pandas、Matplotlib、GeoPandas），用 DuckDB 跑 SQL 复核</dd></div>
+    <div><dt>文件</dt><dd><a href="../../files/nyc-heat-complaints-report.pdf">完整报告（英文 PDF）</a></dd></div>
+    </dl>
+    <article class="prose">
+<h2>问题</h2>
+<p>纽约每年 10 月 1 日到次年 5 月 31 日是供暖季：室外低于 55°F 时，房东白天要把室内保持在 68°F，夜里不管天气如何都至少要有 62°F。没有暖气的租户可以打 311 投诉，所以 311 的数据基本就是一份“谁在什么时候挨冻”的记录。</p>
+<p>我问了四个问题，每张图回答一个：冬天里大家什么时候投诉？天气能解释多少？投诉集中在哪里，和收入有没有关系？是不是总是那几栋楼？</p>
+
+<h2>数据和方法</h2>
+<ul>
+  <li>没有下载整个数据集，而是通过纽约开放数据的 API，只取 2025 年 10 月 1 日到 2026 年 5 月 31 日的“暖气/热水”投诉，一共 <strong>341,824 条</strong>。</li>
+  <li>按“补充说明”字段分类：其中 303,434 条是没有暖气，其余只和热水有关。</li>
+  <li>把供暖季的每一天和 NOAA 中央公园气象站的夜间最低气温对上，243 天一天不缺。</li>
+  <li>地图上，用每个邮编区的租房户数去除无暖气投诉数，因为暖气投诉几乎都来自租户。租房户少于 500 的区域标成灰色。</li>
+  <li>全市统计时保留同一地址同一天的重复投诉；楼栋那张图改用“至少有一条投诉的天数”，因为重复投诉在那里影响最大。</li>
+  <li>用 DuckDB 跑 SQL 把主要统计重算了一遍，核对 pandas 的结果。</li>
+</ul>
+
+<h2>发现</h2>
+<figure class="fig paper">
+  <a class="zoom" href="../../assets/img/nyc-heat/fig1.webp"><img src="../../assets/img/nyc-heat/fig1.webp" alt="每日无暖气投诉的日历热力图" width="1800" height="1391" loading="lazy"></a>
+  <figcaption>天一转冷，10 月就开始有投诉；高峰出现在 1 月下旬连续十个冰冻的夜晚。最多的一天是 2 月 8 日，共 5,799 条投诉。</figcaption>
+</figure>
+<figure class="fig paper">
+  <a class="zoom" href="../../assets/img/nyc-heat/fig2.webp"><img src="../../assets/img/nyc-heat/fig2.webp" alt="按夜间最低气温，与温和天气相比的投诉倍数" width="1800" height="1391" loading="lazy"></a>
+  <figcaption>夜间最低气温低于 15°F 的日子里，无暖气投诉的中位数约为温和天气（45–55°F）的 10 倍。只涉及热水的投诉几乎没有变化。</figcaption>
+</figure>
+<figure class="fig paper">
+  <a class="zoom" href="../../assets/img/nyc-heat/fig3.webp"><img src="../../assets/img/nyc-heat/fig3.webp" alt="各邮编区投诉率地图和收入散点图" width="1800" height="1391" loading="lazy"></a>
+  <figcaption>收入较低的地区投诉率往往更高（186 个邮编区，Spearman &rho; = &minus;0.57）。但布朗克斯有两个邮编区，一半以上的投诉来自同一栋楼，橙色箭头标出了去掉这栋楼后它们会落在哪里。</figcaption>
+</figure>
+<figure class="fig paper">
+  <a class="zoom" href="../../assets/img/nyc-heat/fig4.webp"><img src="../../assets/img/nyc-heat/fig4.webp" alt="投诉天数最多的 20 个地址的条码图" width="1800" height="1391" loading="lazy"></a>
+  <figcaption>一小部分楼整个冬天都在被投诉。湾脊区（Bay Ridge）有一个地址，243 天里有 198 天出现投诉。</figcaption>
+</figure>
+
+<h2>图是怎么改出来的</h2>
+<p>大部分图在定稿前改过两版。举两个例子：</p>
+<figure class="fig-group">
+  <div class="fig-pair">
+<figure class="fig paper">
+  <a class="zoom" href="../../assets/img/nyc-heat/draft-a.webp"><img src="../../assets/img/nyc-heat/draft-a.webp" alt="气温图第一版：两类投诉画在同一个坐标轴上" width="910" height="546" loading="lazy"></a>
+</figure>
+<figure class="fig paper">
+  <a class="zoom" href="../../assets/img/nyc-heat/draft-b.webp"><img src="../../assets/img/nyc-heat/draft-b.webp" alt="气温图第二版：拆成两个面板，各用各的坐标轴" width="1100" height="492" loading="lazy"></a>
+</figure>
+  </div>
+  <figcaption>气温图的草稿。第一版把两类投诉画在同一个坐标轴上，热水投诉被压成底部一条扁线。第二版拆成两个面板，但直线拟合（r = &minus;0.82）在暖和的日子会预测出负数投诉，所以我放弃了它。定稿让每类投诉各自和自己的温和天气水平比较，两类就能放在同一个刻度上。</figcaption>
+</figure>
+<figure class="fig-group">
+  <div class="fig-pair">
+<figure class="fig paper">
+  <a class="zoom" href="../../assets/img/nyc-heat/draft-c.webp"><img src="../../assets/img/nyc-heat/draft-c.webp" alt="地图第一版：投诉总数，默认配色" width="780" height="780" loading="lazy"></a>
+</figure>
+<figure class="fig paper">
+  <a class="zoom" href="../../assets/img/nyc-heat/draft-d.webp"><img src="../../assets/img/nyc-heat/draft-d.webp" alt="地图第二版：投诉率和收入的双变量地图" width="910" height="780" loading="lazy"></a>
+</figure>
+  </div>
+  <figcaption>地图的草稿。画投诉总数，基本只是在画哪里人多。把投诉率和收入合成一张双变量地图，看起来有意思，但我总得回头查图例。定稿把问题拆成一张地图和一张联动的散点图。</figcaption>
+</figure>
+
+<h2>局限和下一步</h2>
+<p>投诉只是租户的报告，不等于确认的违规，所以下一步应该加上市政住房部门的违规数据。公共住房的租户大多向 NYCHA 报修，不走 311，所以公共住房多的地区在地图上可能显得比实际好。我也想把楼栋那张图扩展到好几个冬天。</p>
+    </article>
+  </div>
+  <nav class="pager" aria-label="更多项目"><span></span><a class="next" href="data-dive-2025.html"><span class="dir">下一个 &rarr;</span><span class="t">Ann Arbor Data Dive 2025：密歇根州竞选捐款</span></a></nav>
+</div>
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+    <p class="say">联系我</p>
+    <a class="mail" href="mailto:dorineyinuoliu@gmail.com">dorineyinuoliu@gmail.com</a>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/yinuoliu-dorine" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../../files/Yinuo-Liu-Resume.pdf">简历（英文 PDF）</a>
+      <span>密歇根州安娜堡</span>
+    </div>
+    <p class="copy">&copy; 2026 刘一诺</p>
+  </div>
+</footer>
+
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-Hans" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>电子游戏销量数据库 · 刘一诺（Dorine）</title>
+  <meta name="description" content="把 Kaggle 上一张游戏销量和评分的大表，整理成关系型 MySQL 数据库，再用 SQL 回答市场问题。">
+  <meta property="og:title" content="电子游戏销量数据库 · 刘一诺（Dorine）">
+  <meta property="og:description" content="把 Kaggle 上一张游戏销量和评分的大表，整理成关系型 MySQL 数据库，再用 SQL 回答市场问题。">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="alternate" hreflang="en" href="https://dorineyinuoliu.github.io/projects/video-game-sales.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://dorineyinuoliu.github.io/zh/projects/video-game-sales.html">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../zh/index.html">刘一诺（Dorine）</a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="../../zh/index.html#work" aria-current="page">作品</a>
+      <a href="../../zh/about.html">关于</a>
+      <a href="../../files/Yinuo-Liu-Resume.pdf">简历</a>
+      <a href="#contact">联系</a>
+      <a class="lang-switch" href="../../projects/video-game-sales.html" hreflang="en" lang="en">EN</a>
+      <button class="theme-toggle" type="button" aria-label="切换到浅色模式">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+  <p class="crumb"><a href="../index.html#work">&larr; 全部作品</a></p>
+  <header class="project-head">
+    <p class="row-meta">个人项目 &middot; SI 564 SQL 与数据库 &middot; 2026 年 3–4 月</p>
+    <h1>电子游戏销量数据库</h1>
+    <p class="lede">把 Kaggle 上一张游戏销量和评分的大表，整理成关系型 MySQL 数据库，再用 SQL 回答市场问题。</p>
+  </header>
+</div>
+
+<div class="wrap">
+  <div class="project-body">
+    <dl class="facts-list">
+    <div><dt>类型</dt><dd>个人课程项目</dd></div>
+    <div><dt>课程</dt><dd>SI 564 SQL 与数据库，密歇根大学</dd></div>
+    <div><dt>时间</dt><dd>2026 年 3–4 月</dd></div>
+    <div><dt>数据</dt><dd>Kaggle 电子游戏销量与评分数据</dd></div>
+    <div><dt>工具</dt><dd>Python（清洗）、MySQL、SQL</dd></div>
+    </dl>
+    <article class="prose">
+<h2>问题</h2>
+<p>原始数据把游戏、平台、类型、发行商、各地区销量和评分都混在一个文件里。要做的是先把它建模整理好，再用来回答市场问题。</p>
+
+<h2>数据和方法</h2>
+<ul>
+  <li>用 Python 清洗 Kaggle 上的销量和评分数据。</li>
+  <li>按实体拆成 7 张表，包括游戏、平台、类型、发行商等，把 <strong>16,717 款游戏</strong>导入 MySQL。</li>
+  <li>用 JOIN、GROUP BY / HAVING 和子查询回答了 6 个市场问题。</li>
+</ul>
+
+<h2>发现</h2>
+<ul>
+  <li>580 家发行商里，只有 <strong>4 家在北美、欧洲和日本都卖出了 5000 万份以上</strong>。</li>
+  <li>评分 85 分及以上的游戏，平均销量约为 70 分以下游戏的 <strong>6.2 倍</strong>。</li>
+</ul>
+<p>只有大约一半的游戏有评分，所以第二条结论只针对这一半，而且这是相关关系，不能说明评分带动了销量。</p>
+<p>结果我写成了一封商业提案信，并在课堂上做了汇报。</p>
+    </article>
+  </div>
+  <nav class="pager" aria-label="更多项目"><a class="prev" href="mhealthy-research.html"><span class="dir">&larr; 上一个</span><span class="t">MHealthy：员工福利的数字门槛</span></a><a class="next" href="flexiknee-pro.html"><span class="dir">下一个 &rarr;</span><span class="t">FlexiKnee Pro</span></a></nav>
+</div>
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+    <p class="say">联系我</p>
+    <a class="mail" href="mailto:dorineyinuoliu@gmail.com">dorineyinuoliu@gmail.com</a>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/yinuoliu-dorine" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../../files/Yinuo-Liu-Resume.pdf">简历（英文 PDF）</a>
+      <span>密歇根州安娜堡</span>
+    </div>
+    <p class="copy">&copy; 2026 刘一诺</p>
+  </div>
+</footer>
+
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>

@@ -10,6 +10,7 @@ about.html              About 页
 404.html                找不到页面时显示
 projects/               每个项目一页
   _template.html        新项目模板（复制后改名使用）
+zh/                     简体中文版，结构和英文版一模一样（zh/index.html、zh/about.html、zh/projects/）
 assets/css/style.css    所有样式，颜色在最上面的 :root 里
 assets/js/main.js       深色/浅色切换、点击图片放大
 assets/img/<项目名>/    压缩后的图片（WebP）
@@ -20,6 +21,12 @@ files/                  简历 PDF、NYC 报告 PDF
 ## 本地预览
 
 直接双击 `index.html` 用浏览器打开即可。
+
+## 中文版
+
+`zh/` 文件夹是整站的简体中文版，图片和 CSS 跟英文版共用。每个页面右上角的「中文 / EN」按钮会跳到另一种语言的同一页。
+
+改内容时记得两边一起改：英文页 `projects/xxx.html` 对应中文页 `zh/projects/xxx.html`。加新项目时，中英文各加一页，首页也各加一张卡片。
 
 ## 常见修改
 
