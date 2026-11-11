@@ -8,7 +8,9 @@
   btn.addEventListener("click", function () {
     var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
     root.setAttribute("data-theme", next);
-    btn.setAttribute("aria-label", next === "light" ? "Switch to dark mode" : "Switch to light mode");
+    var zh = (root.getAttribute("lang") || "").indexOf("zh") === 0;
+    var label = next === "light" ? (zh ? "切换到深色模式" : "Switch to dark mode") : (zh ? "切换到浅色模式" : "Switch to light mode");
+    btn.setAttribute("aria-label", label);
     try { localStorage.setItem("theme", next); } catch (e) {}
   });
 })();
@@ -20,7 +22,7 @@
   var box = document.createElement("div");
   box.className = "lightbox";
   box.setAttribute("role", "dialog");
-  box.setAttribute("aria-label", "Full-size image");
+  box.setAttribute("aria-label", (document.documentElement.getAttribute("lang") || "").indexOf("zh") === 0 ? "查看大图" : "Full-size image");
   var img = document.createElement("img");
   box.appendChild(img);
   document.body.appendChild(box);

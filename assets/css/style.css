@@ -67,6 +67,8 @@ li { margin-bottom: 0.35em; }
 .site-nav { display: flex; align-items: center; gap: 26px; font-size: 15px; }
 .site-nav a { text-decoration: none; color: var(--text-2); }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--text); }
+.lang-switch { font-weight: 600; color: var(--text) !important; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; font-size: 13.5px; }
+.lang-switch:hover { border-color: var(--muted); color: var(--accent) !important; }
 .theme-toggle {
   display: inline-flex; align-items: center; justify-content: center;
   width: 34px; height: 34px; border-radius: 50%;
@@ -270,4 +272,23 @@ li { margin-bottom: 0.35em; }
   .pager { grid-template-columns: 1fr; }
   .pager .next { text-align: left; }
   .skill-list li { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* ---------- Simplified Chinese pages ---------- */
+:root[lang^="zh"] body {
+  font-family: "Hanken Grotesk", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+  line-height: 1.8;
+}
+:root[lang^="zh"] h1, :root[lang^="zh"] h2, :root[lang^="zh"] h3, :root[lang^="zh"] h4 { letter-spacing: 0; line-height: 1.3; }
+:root[lang^="zh"] .hero h1 { font-size: 56px; max-width: none; line-height: 1.2; }
+:root[lang^="zh"] .project-head h1 { max-width: 16em; }
+:root[lang^="zh"] .facts .k, :root[lang^="zh"] .facts-list dt { letter-spacing: 0.04em; }
+:root[lang^="zh"] .fig figcaption, :root[lang^="zh"] .card p, :root[lang^="zh"] .job p { line-height: 1.7; }
+@media (max-width: 720px) {
+  :root[lang^="zh"] .hero h1 { font-size: 36px; }
+  :root[lang^="zh"] .project-head h1 { font-size: 30px; }
+}
+@media (max-width: 400px) {
+  .site-nav { gap: 12px; font-size: 14px; }
+  .lang-switch { padding: 2px 8px; font-size: 12.5px; }
 }
