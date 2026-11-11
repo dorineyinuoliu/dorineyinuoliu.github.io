@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ann Arbor Data Dive 2025: Michigan campaign donations · Yinuo (Dorine) Liu</title>
+  <meta name="description" content="Our team won first place in the Descriptive Analysis track with a look at who gives to Michigan campaigns, how much, and when.">
+  <meta property="og:title" content="Ann Arbor Data Dive 2025: Michigan campaign donations · Yinuo (Dorine) Liu">
+  <meta property="og:description" content="Our team won first place in the Descriptive Analysis track with a look at who gives to Michigan campaigns, how much, and when.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Yinuo (Dorine) Liu</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../index.html#work" aria-current="page">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../files/Yinuo-Liu-Resume.pdf">Resume</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" type="button" aria-label="Switch to light mode">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+  <p class="crumb"><a href="../index.html#work">&larr; All work</a></p>
+  <header class="project-head">
+    <p class="row-meta">Team lead, 5 people &middot; 1st place, Descriptive Analysis track &middot; Nov 2025</p>
+    <h1>Ann Arbor Data Dive 2025: Michigan campaign donations</h1>
+    <p class="lede">Our team won first place in the Descriptive Analysis track with a look at who gives to Michigan campaigns, how much, and when.</p>
+  </header>
+</div>
+
+<div class="wrap">
+<figure class="fig hero-fig paper">
+  <a class="zoom" href="../assets/img/data-dive/weekly-count.webp"><img src="../assets/img/data-dive/weekly-count.webp" alt="Weekly number of donations by amount range, September 2024 to October 2025" width="1600" height="723" loading="lazy"></a>
+  <figcaption>Weekly donation counts by amount range, September 2024 to October 2025. Small donations drive the spikes.</figcaption>
+</figure>
+</div>
+
+<div class="wrap">
+  <div class="project-body">
+    <dl class="facts-list">
+    <div><dt>Type</dt><dd>One-day data hackathon, team of 5</dd></div>
+    <div><dt>Result</dt><dd>1st place, Descriptive Analysis track</dd></div>
+    <div><dt>My role</dt><dd>Team lead. I wrote most of the team's Python code.</dd></div>
+    <div><dt>Timeline</dt><dd>November 2025</dd></div>
+    <div><dt>Data</dt><dd>Michigan campaign-finance contribution and receipt tables</dd></div>
+    <div><dt>Tools</dt><dd>Python (pandas, NumPy, Matplotlib, Seaborn)</dd></div>
+    </dl>
+    <article class="prose">
+<h2>The question</h2>
+<p>The Data Dive gives teams one day with a real public dataset. Ours was Michigan campaign finance. We chose the descriptive track and focused on three things: how much of the money comes from small versus large donors, when donations spike, and whether some campaigns receive donations in unusual bursts.</p>
+
+<h2>Data and methods</h2>
+<ul>
+  <li>Cleaned more than 500,000 donation records from the contribution tables with pandas and NumPy.</li>
+  <li>Grouped donations into amount bands, from under $10 to over $200, and tracked counts and dollar totals by week from September 2024 to October 2025.</li>
+  <li>Defined a <strong>donation dump</strong> as a day when a committee received at least 50 donations and at least 5 times its own daily average, then counted dump days for each campaign.</li>
+  <li>Charted the results in Matplotlib and Seaborn: weekly time series, a committee-by-day heatmap and summary charts.</li>
+</ul>
+
+<h2>What I did</h2>
+<p>I led the team of five and wrote most of our Python code.</p>
+
+<h2>What we found</h2>
+<ul>
+  <li>Small donations drove the volume: <strong>96% of donations were under $50</strong>. The dollars told a different story, with most of the money coming from a small number of large gifts.</li>
+  <li>The busiest week had 34,423 donations. The biggest weekly dollar spike was about $5.6 million, in July 2025.</li>
+  <li>We found <strong>30 dump days across 9 campaigns</strong>. The largest was 7,964 donations in one day. The median dump day had 101 donations, about 10.7 times the campaign's usual level.</li>
+</ul>
+<figure class="fig paper">
+  <a class="zoom" href="../assets/img/data-dive/dump-days.webp"><img src="../assets/img/data-dive/dump-days.webp" alt="Bar chart of campaigns with the most donation dump days" width="1390" height="790" loading="lazy"></a>
+  <figcaption>Campaigns with the most dump days.</figcaption>
+</figure>
+<figure class="fig paper">
+  <a class="zoom" href="../assets/img/data-dive/dump-timeline.webp"><img src="../assets/img/data-dive/dump-timeline.webp" alt="Daily donation timelines for the five committees with the most dump days" width="1600" height="1124" loading="lazy"></a>
+  <figcaption>Daily donations for the five committees with the most dump days. Red bars are dump days.</figcaption>
+</figure>
+<figure class="fig paper">
+  <a class="zoom" href="../assets/img/data-dive/dump-heatmap.webp"><img src="../assets/img/data-dive/dump-heatmap.webp" alt="Heatmap of daily donations by committee with dump days outlined" width="1600" height="789" loading="lazy"></a>
+  <figcaption>Daily donation activity by committee. Blue boxes mark dump days.</figcaption>
+</figure>
+<figure class="fig paper">
+  <a class="zoom" href="../assets/img/data-dive/weekly-amount.webp"><img src="../assets/img/data-dive/weekly-amount.webp" alt="Weekly donation dollars by amount range" width="1600" height="723" loading="lazy"></a>
+  <figcaption>Weekly dollars by amount range. Large donations over $200 account for nearly all of the money spikes.</figcaption>
+</figure>
+<p class="note">These are hackathon charts, made in a few hours. I left them as they were on the day.</p>
+    </article>
+  </div>
+  <nav class="pager" aria-label="More projects"><a class="prev" href="nyc-heat-complaints.html"><span class="dir">&larr; Previous</span><span class="t">Who goes cold in New York?</span></a><a class="next" href="mhealthy-research.html"><span class="dir">Next &rarr;</span><span class="t">MHealthy: digital barriers to wellness benefits</span></a></nav>
+</div>
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+    <p class="say">Get in touch</p>
+    <a class="mail" href="mailto:dorineyinuoliu@gmail.com">dorineyinuoliu@gmail.com</a>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/yinuoliu-dorine" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../files/Yinuo-Liu-Resume.pdf">Resume (PDF)</a>
+      <span>Ann Arbor, Michigan</span>
+    </div>
+    <p class="copy">&copy; 2026 Yinuo Liu</p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
